@@ -1,0 +1,190 @@
+/* AWS GenAI Well-Architected Labs Custom Styles */
+
+/* AWS Brand Colors */
+:root {
+    --aws-orange: #FF9900;
+    --aws-dark-blue: #232F3E;
+    --aws-light-blue: #4B9CD3;
+    --aws-gray: #F2F3F3;
+    --aws-squid-ink: #232F3E;
+    --aws-smile: #FF9900;
+}
+
+/* AWS Console Style */
+body {
+    font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+.aws-header {
+    background: linear-gradient(90deg, #232F3E 0%, #2a3441 100%);
+    border-bottom: 1px solid #3c4043;
+}
+
+.aws-sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #d5dbdb;
+}
+
+.aws-card {
+    background-color: #ffffff;
+    border: 1px solid #d5dbdb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.aws-button-primary {
+    background-color: #FF9900;
+    border: 1px solid #FF9900;
+    color: #ffffff;
+}
+
+.aws-button-primary:hover {
+    background-color: #e88b00;
+    border-color: #e88b00;
+}
+
+.aws-text-primary {
+    color: #232F3E;
+}
+
+.aws-text-secondary {
+    color: #5f6b7a;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Active lab link styling */
+.lab-link.active {
+    background-color: var(--aws-orange);
+    color: white;
+    font-weight: 500;
+}
+
+/* Pillar toggle animations */
+.pillar-toggle .fa-chevron-down {
+    transition: transform 0.2s ease-in-out;
+}
+
+.pillar-toggle.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Content fade animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Code blocks */
+pre {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+code {
+    background-color: #f8f9fa;
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+}
+
+/* Step indicators */
+.step-indicator {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--aws-orange);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+/* Progress bar */
+.progress-bar {
+    height: 4px;
+    background-color: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--aws-orange);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Print styles */
+@media print {
+    .sidebar,
+    .header {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+}
